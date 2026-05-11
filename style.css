@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dde3ea;
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #003366;
+    color: white;
+    padding: 20px 0;
+    flex-shrink: 0;
+}
+
+.sidebar h3 {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 25px;
+    padding: 0 15px;
+    color: #aac4e0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sidebar button {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    background: none;
+    border: none;
+    color: #ccc;
+    text-align: left;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.sidebar button:hover {
+    background-color: #004a8f;
+    color: white;
+}
+
+.sidebar button.ativo {
+    background-color: #0066cc;
+    color: white;
+}
+
+.conteudo {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.tela {
+    display: none;
+}
+
+.tela.ativa {
+    display: block;
+}
+
+h2 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #0066cc;
+    padding-bottom: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+thead {
+    background-color: #003366;
+    color: white;
+}
+
+th, td {
+    padding: 11px 14px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background-color: #f0f6ff;
+}
+
+.badge {
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.ativo-badge {
+    background-color: #d4edda;
+    color: #1a7a3a;
+}
+
+.inativo-badge {
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+.btn-acao {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.btn-editar {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.btn-excluir {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-toggle {
+    background-color: #6c757d;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #0066cc;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.card-form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+    max-width: 550px;
+}
+
+.btn-salvar {
+    padding: 10px 24px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.btn-limpar {
+    padding: 10px 18px;
+    background-color: #eee;
+    color: #555;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 8px;
+}
+
+.aviso {
+    font-size: 13px;
+    margin-top: 12px;
+    display: none;
+}
+
+.aviso.erro {
+    color: red;
+}
+
+.aviso.ok {
+    color: green;
+}
+
+.log-box {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.log-item {
+    font-size: 13px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #444;
+}
+
+.log-item:last-child {
+    border-bottom: none;
+}
+
+.log-hora {
+    color: #888;
+    margin-right: 8px;
+    font-size: 12px;
+}
+
+.log-tipo {
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+.log-criado {
+    color: #1a7a3a;
+}
+
+.log-removido {
+    color: #dc3545;
+}
+
+.log-editado {
+    color: #cc8800;
+}
+
+.log-status {
+    color: #0066cc;
+}
+
+.vazio {
+    color: #aaa;
+    font-size: 14px;
+    padding: 20px 0;
+}
+
+#busca {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 260px;
+    margin-bottom: 15px;
+    outline: none;
+}

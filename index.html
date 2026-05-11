@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Directory - Simulador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Projeto por Christian Silva — Aluno ADS Uninter 2026 -->
+
+<div class="sidebar">
+    <h3>AD Simulador</h3>
+
+    <button class="ativo" onclick="mostrarTela('tela-usuarios', this)">
+        👤 Usuários
+    </button>
+
+    <button onclick="mostrarTela('tela-cadastro', this)">
+        ➕ Novo Usuário
+    </button>
+
+    <button onclick="mostrarTela('tela-log', this)">
+        📋 Log de Atividades
+    </button>
+</div>
+
+<div class="conteudo">
+
+    <div class="tela ativa" id="tela-usuarios">
+        <h2>Usuários Cadastrados</h2>
+
+        <input
+            type="text"
+            id="busca"
+            placeholder="Buscar por nome ou login..."
+            oninput="filtrarUsuarios()"
+        >
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Login</th>
+                    <th>Departamento</th>
+                    <th>Perfil</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody id="tabela-corpo"></tbody>
+        </table>
+    </div>
+
+    <div class="tela" id="tela-cadastro">
+
+        <h2 id="titulo-form">Novo Usuário</h2>
+
+        <div class="card-form">
+
+            <input type="hidden" id="editando-index" value="-1">
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" id="inp-nome" placeholder="Ex: João Silva">
+                </div>
+
+                <div class="form-group">
+                    <label>Sobrenome</label>
+                    <input type="text" id="inp-sobrenome" placeholder="Ex: Oliveira">
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label>Login (usuário de rede)</label>
+                <input type="text" id="inp-login" placeholder="Ex: joao.silva">
+            </div>
+
+            <div class="form-group">
+                <label>E-mail</label>
+                <input type="email" id="inp-email" placeholder="Ex: joao.silva@empresa.com">
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label>Departamento</label>
+
+                    <select id="inp-depto">
+                        <option value="">Selecione...</option>
+                        <option>TI</option>
+                        <option>Financeiro</option>
+                        <option>RH</option>
+                        <option>Administrativo</option>
+                        <option>Comercial</option>
+                        <option>Suporte</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Perfil de Acesso</label>
+
+                    <select id="inp-perfil">
+                        <option value="">Selecione...</option>
+                        <option>Administrador</option>
+                        <option>Usuário Padrão</option>
+                        <option>Somente Leitura</option>
+                        <option>Suporte</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <p class="aviso erro" id="aviso-erro">
+                Preencha todos os campos antes de salvar.
+            </p>
+
+            <p class="aviso ok" id="aviso-ok">
+                Usuário salvo com sucesso!
+            </p>
+
+            <button class="btn-salvar" onclick="salvarUsuario()">
+                Salvar
+            </button>
+
+            <button class="btn-limpar" onclick="limparForm()">
+                Limpar
+            </button>
+
+        </div>
+    </div>
+
+    <div class="tela" id="tela-log">
+
+        <h2>Log de Atividades</h2>
+
+        <div class="log-box" id="log-box">
+            <p class="vazio" id="log-vazio">
+                Nenhuma atividade registrada ainda.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
