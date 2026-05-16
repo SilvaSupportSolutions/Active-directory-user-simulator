@@ -95,6 +95,7 @@ function salvarUsuario() {
     var email = document.getElementById("inp-email").value.trim();
     var depto = document.getElementById("inp-depto").value;
     var perfil = document.getElementById("inp-perfil").value;
+    var editandoIndex = document.getElementById("editando-index").value;
 
     if (
         nome == "" ||
@@ -110,17 +111,24 @@ function salvarUsuario() {
         return;
     }
 
-    usuarios.push({
-        nome: nome,
-        sobrenome: sobrenome,
-        login: login,
-        email: email,
-        depto: depto,
-        perfil: perfil,
-        ativo: true
-    });
+  var usuario = {
+    nome: nome,
+    sobrenome: sobrenome,
+    login: login,
+    email: email,
+    depto: depto,
+    perfil: perfil,
+    ativo: true
+};
 
+if (editandoIndex == "-1") {
+    usuarios.push(usuario);
     registrarLog("criado", nome + " " + sobrenome);
+} else {
+    usuario.ativo = usuarios[editandoIndex].ativo;
+    usuarios[editandoIndex] = usuario;
+    registrarLog("editado", nome + " " + sobrenome);
+}
 
     renderizarTabela(usuarios);
 
@@ -134,7 +142,6 @@ function salvarUsuario() {
 }
 
 function editarUsuario(index) {
-
     var u = usuarios[index];
 
     document.getElementById("inp-nome").value = u.nome;
@@ -144,7 +151,8 @@ function editarUsuario(index) {
     document.getElementById("inp-depto").value = u.depto;
     document.getElementById("inp-perfil").value = u.perfil;
 
-    excluirUsuario(index);
+    document.getElementById("editando-index").value = index;
+    document.getElementById("titulo-form").innerText = "Editar Usuário";
 
     mostrarTela(
         "tela-cadastro",
@@ -181,6 +189,10 @@ function limparForm() {
     document.getElementById("inp-perfil").value = "";
 
     document.getElementById("aviso-erro").style.display = "none";
+
+    document.getElementById("editando-index").value = "-1";
+    document.getElementById("titulo-form").innerText = "Novo Usuário";
+    document.getElementById("aviso-ok").style.display = "none";
 }
 
 function registrarLog(tipo, descricao) {
