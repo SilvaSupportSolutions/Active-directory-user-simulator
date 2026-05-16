@@ -36,23 +36,23 @@ This project is part of my learning path in Systems Analysis and Development, wi
 
 ### Dashboard
 
-![Dashboard](screenshots/home.png)
+![Dashboard](screenshots/1-home.png)
 
 ### Search Users
 
-![Search Users](screenshots/search.png)
+![Search Users](screenshots/2-search.png)
 
 ### Add User
 
-![Add User](screenshots/add-user.png)
+![Add User](screenshots/3-add-user.png)
 
 ### Edit User
 
-![Edit User](screenshots/edit-user.png)
+![Edit User](screenshots/4-edit-user.png)
 
 ### Activity Log
 
-![Activity Log](screenshots/activity-log.png)
+![Activity Log](screenshots/5-activity-log.png)
 
 ## Author
 
