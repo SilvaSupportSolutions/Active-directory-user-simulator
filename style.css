@@ -285,3 +285,73 @@ tr:hover td {
     margin-bottom: 15px;
     outline: none;
 }
+
+body {
+    font-family: "Segoe UI", sans-serif;
+}
+
+table,
+.card-form,
+.log-box {
+    transition: 0.2s ease;
+}
+
+table:hover,
+.card-form:hover,
+.log-box:hover {
+    transform: translateY(-2px);
+}
+
+.sidebar button,
+.btn-salvar,
+.btn-limpar,
+.btn-acao {
+    transition: 0.2s ease;
+}
+
+.sidebar button:hover,
+.btn-salvar:hover,
+.btn-limpar:hover,
+.btn-acao:hover {
+    opacity: 0.9;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+#busca:focus {
+    border-color: #0066cc;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+}
+
+.btn-salvar {
+    font-weight: bold;
+}
+
+.btn-editar:hover {
+    background-color: #ffca2c;
+}
+
+.btn-excluir:hover {
+    background-color: #bb2d3b;
+}
+
+.btn-toggle:hover {
+    background-color: #5c636a;
+}
+
+table {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #b8c2cc;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #edf1f5;
+}
