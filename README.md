@@ -32,6 +32,28 @@ Open the `index.html` file in your browser.
 
 This project is part of my learning path in Systems Analysis and Development, with focus on IT support, service desk routines and front-end development.
 
+## Screenshots
+
+### Dashboard
+
+![Dashboard](screenshots/home.png)
+
+### Search Users
+
+![Search Users](screenshots/search.png)
+
+### Add User
+
+![Add User](screenshots/add-user.png)
+
+### Edit User
+
+![Edit User](screenshots/edit-user.png)
+
+### Activity Log
+
+![Activity Log](screenshots/activity-log.png)
+
 ## Author
 
 Christian Silva
